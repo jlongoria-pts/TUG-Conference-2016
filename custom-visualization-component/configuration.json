@@ -1,0 +1,126 @@
+{
+  "label": "Multi-Calendar Heatmap",
+  "description": "D3 Multi-Calendar Heatmap",
+  "module": "multiCalendarHeatmap",
+  "thumbnail": "multi-calendar-heatmap.png",
+  "sections": [
+    {
+     "name": "Script",
+     "expandable": true,
+     "properties": [
+         {
+           "name": "script",
+           "label": "Script Path",
+           "description": "Script path",
+           "mandatory": true,
+           "defaultValue": "multiCalendarHeatmap.min.js",
+           "type": "Path"
+         },
+         {
+           "name": "css",
+           "label": "CSS Path",
+           "description": "CSS path",
+           "mandatory": true,
+           "defaultValue": "multiCalendarHeatmap.css",
+           "type": "Path"
+         },
+         {
+           "name": "module",
+           "label": "Module",
+           "description": "Module",
+           "mandatory": false,
+           "defaultValue": "multiCalendarHeatmap",
+           "type": "Path"
+         }
+       ]
+     },
+    {
+     "name": "Data",
+     "expandable": true,
+     "properties": [
+       {
+         "name": "begin_year",
+         "label": "Begin Year",
+         "description": "The beginning fiscal year.",
+         "mandatory": true,
+         "defaultValue": "2011",
+         "type": "Integer"
+       },
+       {
+          "name": "end_year",
+          "label": "End Year",
+          "description": "The ending fiscal year.",
+          "mandatory": true,
+          "defaultValue": "2015",
+          "type": "Integer"
+        },
+        {
+           "name": "cell_size",
+           "label": "Cell Size",
+           "description": "The cell size of each day (in pixels).",
+           "mandatory": true,
+           "defaultValue": "15",
+           "type": "Integer"
+         },
+         {
+            "name": "font_size",
+            "label": "Font Size",
+            "description": "The font-size of the year title (in pixels).",
+            "mandatory": true,
+            "defaultValue": "16",
+            "type": "Integer"
+          },
+         {
+            "name": "date_format",
+            "label": "Date Format",
+            "description": "The date-formatting style used in the tooltip.",
+            "mandatory": true,
+            "defaultValue": "%A, %b. %d",
+            "type": "Text"
+          },
+          {
+             "name": "measure_format",
+             "label": "Measure Format",
+             "description": "The measure-formatting style used in the tooltip.",
+             "mandatory": true,
+             "defaultValue": ",",
+             "type": "Text"
+           }
+      ]
+   }
+ ],
+  "datasets": [
+    {
+      "label": "Main Dataset",
+      "cardinality": -1,
+      "sections": [
+        {
+          "name": "date",
+          "properties": [
+            {
+              "name": "date",
+                    "label": "Date",
+                    "description": "Dates column: yyyy-mm-dd (java.sql.Date).",
+                    "mandatory": true,
+                    "defaultValue": "2016-06-02",
+                    "type": "Text"
+            }
+          ]
+        },
+        {
+          "name": "measure",
+          "properties": [
+            {
+              "name": "measure",
+                    "label": "Measure",
+                    "description": "Measure column (Float).",
+                    "mandatory": true,
+                    "defaultValue": "0",
+                    "type": "Float"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
